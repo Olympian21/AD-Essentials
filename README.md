@@ -1,4 +1,4 @@
-# Active Directory Basics
+# Active Directory Essentials
 
 During this task, I'll assume the role of the new IT admin at THM Inc. 
 
@@ -22,6 +22,7 @@ My first task as the new domain administrator is to check the existing AD OUs an
 
 <img src="https://i.imgur.com/KdiXMUS.png" height="80%" width="80%"  alt="Active Directory" />
 
+<h4>Deleting extra OUs and users</h4>
 The first thing I notice is that the Reasearch and Development department doesn't appear in the chart. I've been told it was closed due to budget cuts and should be removed from the domain. By default, OUs are protected against accidental deletion. To delete the OU, I need to enable the Advanced Features in the View menu:
 
 <img src="https://i.imgur.com/rjoY3gK.png" height="80%" width="80%"  alt="Active Directory" />
@@ -37,6 +38,12 @@ There will be a checkbox in the Object tab to disable the protection:
 The Reasearch and Development department has been deleted:
 
 <img src="https://i.imgur.com/yevLnve.png" height="80%" width="80%"  alt="Active Directory" />
+
+<h4>Delegation</h4>
+We will delegate control over the Sales OU to Phillip. To delegate control over an OU, you can right-click it and select Delegate Control:
+
+<img src="https://i.imgur.com/Kkeh167.png" height="80%" width="80%"  alt="Active Directory" />
+
 
 
 
