@@ -105,4 +105,15 @@ Since I am tidying up my AD, I'll create two separate OUs for Workstations and S
 
 Next, I'll move the personal computers and laptops to the Workstations OU and the servers to the Servers OU from the Computers container. Doing so will allow me to configure policies for each OU later.
 
+<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+
+
+<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+
+
+<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+
+
+<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+
 
