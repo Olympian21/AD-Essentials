@@ -92,8 +92,17 @@ Finally, I'm sign in! I'll click on the flag text file to view the flag.
 <img src="https://i.imgur.com/W6jVtUH.png" height="80%" width="80%"  alt="Active Directory" />
 
 <h3>Managing Computers in AD</h3>
+By default, all the machines that join a domain (except for the DCs) will be put in the container called "Computers". If we check our DC (Domain Controller), we will see that some devices are already there:
+
+<img src="https://i.imgur.com/P6MBy4E.png" height="80%" width="80%"  alt="Active Directory" />
+
+We can see some servers, some laptops and some PCs corresponding to the users in our network. Having all of our devices there is not the best idea since it's very likely that you want different policies for your servers and the machines that regular users use on a daily basis.
+
+Since I am tidying up my AD, I'll create two separate OUs for Workstations and Servers. I will be creating them directly under the thm.local domain container. In the end, I will have the following OU structure:
 
 
+<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
 
+Next, I'll move the personal computers and laptops to the Workstations OU and the servers to the Servers OU from the Computers container. Doing so will allow me to configure policies for each OU later.
 
 
