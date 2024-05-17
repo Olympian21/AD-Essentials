@@ -105,15 +105,92 @@ Since I am tidying up my AD, I'll create two separate OUs for Workstations and S
 
 Next, I'll move the personal computers and laptops to the Workstations OU and the servers to the Servers OU from the Computers container. Doing so will allow me to configure policies for each OU later.
 
-<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+<img src="https://i.imgur.com/WlJxxgC.png" height="80%" width="80%"  alt="Active Directory" />
+
+Move to Workstations:
+
+<img src="https://i.imgur.com/uqU7z7O.png" height="80%" width="80%"  alt="Active Directory" />
+
+Move to servers:
+
+<img src="https://i.imgur.com/dmTECxG.png" height="80%" width="80%"  alt="Active Directory" />
+
+Click OK:
+
+<img src="https://i.imgur.com/nVNvQvA.png" height="80%" width="80%"  alt="Active Directory" />
+
+<h3>Group Policies</h3>
+
+So far, we have organised users and computers in OUs, but the main idea behind this is to be able to deploy different policies for each OU individually. That way, we can push different configurations and security baselines to users depending on their department. Windows manages such policies through Group Policy Objects (GPO). GPOs are simply a collection of settings that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.
+
+To configure GPOs, you can use the Group Policy Management tool, available from the start menu:
+
+<img src="https://i.imgur.com/f5XtS84.png" height="80%" width="80%"  alt="Active Directory" />
+
+The first thing you will see when opening it is your complete OU hierarchy, as defined before. To configure Group Policies, you first create a GPO under Group Policy Objects and then link it to the OU where you want the policies to apply.  The Default Domain Policy indicates really basic configurations that should apply to most domains, including password and account lockout policies. Since this GPO applies to the whole domain, any change to it would affect all computers. Let's change the minimum password length policy to require users to have at least 10 characters in their passwords. To do this, right-click the GPO and select Edit:
+
+<img src="https://i.imgur.com/AOBzjsl.png" height="80%" width="80%"  alt="Active Directory" />
+
+This will open a new window where we can navigate and edit all the available configurations. To change the minimum password length, go to Computer Configurations -> Policies -> Windows Setting -> Security Settings -> Account Policies -> Password Policy and change the required policy value:
+
+<img src="https://i.imgur.com/vsBEKie.png" height="80%" width="80%"  alt="Active Directory" />
+
+I will now set the password length to 10:
+
+<img src="https://i.imgur.com/JsjGR9i.png" height="80%" width="80%"  alt="Active Directory" />
+
+<h3>Creating some GPOs for THM Inc.</h3>
+
+I have been tasked with implementing some GPOs to allow us to:
+<ol>
+<li>Block non-IT users from accessing the Control Panel.</li>
+<li>Make workstations and servers lock their screen automatically after 5 minutes of user inactivity to avoid people leaving their sessions exposed.</li>
+</ol>
+
+Let's focus on each of those and define what policies we should enable in each GPO and where they should be linked.
+
+<b>Restrict Access to Control Panel</b>
+
+Let's create a new GPO called Restrict Control Panel Access and open it for editing. Since we want this GPO to apply to specific users, we will look under User Configuration for the following policy:
 
 
-<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+<img src="https://i.imgur.com/a30Tqzj.png" height="80%" width="80%"  alt="Active Directory" />
+
+Click on Prohibit access to control panel:
+
+<img src="https://i.imgur.com/n8BeqDr.png" height="80%" width="80%"  alt="Active Directory" />
+
+Click OK:
+
+<img src="https://i.imgur.com/6VRYlHv.png" height="80%" width="80%"  alt="Active Directory" />
+
+Notice I have enabled the Prohibit Access to Control Panel and PC settings policy.
+
+<img src="https://i.imgur.com/BETokSf.png" height="80%" width="80%"  alt="Active Directory" />
+
+<b>Auto Lock Screen GPO</b>
+
+Let's create a new GPO, call it Auto Lock Screen, and edit it. The policy to achieve what we want is located in the following route:
+
+<img src="https://i.imgur.com/nok8j5z.png" height="80%" width="80%"  alt="Active Directory" />
+
+We will set the inactivity limit to 5 minutes so that computers get locked automatically if any user leaves their session open. 
+
+<img src="https://i.imgur.com/0I18AVw.png" height="80%" width="80%"  alt="Active Directory" />
+
+Click OK:
+
+<img src="https://i.imgur.com/WYywjX4.png" height="80%" width="80%"  alt="Active Directory" />
+
+After closing the GPO editor, we will link the GPO to the root domain by dragging the GPO to it:
+
+<img src="https://i.imgur.com/FVsIfVq.png" height="80%" width="80%"  alt="Active Directory" />
+
+That completes the Active Directory Essentials project.
 
 
-<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
 
 
-<img src="https://i.imgur.com/EemDJ55.png" height="80%" width="80%"  alt="Active Directory" />
+
 
 
