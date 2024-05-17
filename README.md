@@ -1,6 +1,6 @@
 # Active Directory Essentials
 
-During this task, I'll assume the role of the new IT admin at THM Inc. 
+During this project, I'll assume the role of the new IT admin at THM Inc. I will be completing tasks such as managing users and computers, delegating, and creating group policies.
 
 <h3>Active Directory Users and Computers</h3>
 To configure users, groups or machines in Active Directory, we need to log in to the Domain Controller and run "Active Directory Users and Computers" from the start menu:
